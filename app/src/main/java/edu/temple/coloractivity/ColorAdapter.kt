@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 
-class ColorAdapter(_context: Context, _colors:Array<String>) : BaseAdapter() {
+class ColorAdapter(_context: Context, _colors:Array<String>, _layout:ConstraintLayout) : BaseAdapter() {
     val context = _context
     val colors = _colors
-
+    val view = _layout
 
     override fun getCount(): Int {
         return colors.size
@@ -34,13 +35,17 @@ class ColorAdapter(_context: Context, _colors:Array<String>) : BaseAdapter() {
         } else
             textView = p1 as TextView
         textView.text = colors[position]
-        textView.setBackgroundColor(Color.parseColor(colors[position]))
+        textView.setBackgroundColor(Color.parseColor("white"))
+        view.setBackgroundColor(Color.parseColor(colors[position]))
         return textView
+
+        return view
     }
 
     override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = getView(position, convertView, parent)
         view.setBackgroundColor(Color.parseColor("white"))
+
         return view
     }
 
