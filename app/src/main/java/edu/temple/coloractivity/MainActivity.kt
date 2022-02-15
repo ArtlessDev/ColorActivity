@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val colors = arrayOf("Red", "Green", "Blue", "Yellow", "Cyan", "Magenta", "Gray", "Black")
+        val colors = arrayOf("White", "Red", "Green", "Blue", "Yellow", "Cyan", "Magenta", "Gray", "Black")
         val spinner = findViewById<Spinner>(R.id.spinner)
 
         val view = findViewById<ConstraintLayout>(R.id.layout)
